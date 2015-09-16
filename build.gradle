@@ -20,7 +20,7 @@ dependencies {
 }
 
 docker {
-    dockerHost = 'https://192.168.59.103:2376'
+    dockerHost = 'https://192.168.99.100:2376'
 }
 
 import de.gesellix.gradle.docker.tasks.*

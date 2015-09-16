@@ -22,9 +22,9 @@
     <!--      Relying Party Configurations          -->
     <!-- ========================================== -->
     
-    <rp:AnonymousRelyingParty provider="https://idp.example.org/idp/shibboleth" defaultSigningCredentialRef="IdPCredential" />
+    <rp:AnonymousRelyingParty provider="https://idp.example.org:9443/idp/shibboleth" defaultSigningCredentialRef="IdPCredential" />
 
-    <rp:DefaultRelyingParty provider="https://idp.example.org/idp/shibboleth" defaultSigningCredentialRef="IdPCredential">
+    <rp:DefaultRelyingParty provider="https://idp.example.org:9443/idp/shibboleth" defaultSigningCredentialRef="IdPCredential">
     <!--
         Each attribute in these profiles configuration is set to its default value,
         that is, the values that would be in effect if those attributes were not present.
@@ -84,8 +84,12 @@
 
 
         <MetadataProvider xsi:type="FilesystemMetadataProvider" xmlns="urn:mace:shibboleth:2.0:metadata"
+            id="EasyLAT"
+            metadataFile="/opt/shibboleth-idp/metadata/sp.xml" />
+
+        <!--<MetadataProvider xsi:type="FilesystemMetadataProvider" xmlns="urn:mace:shibboleth:2.0:metadata"
                           id="MyMetadata"
-                          metadataFile="/opt/shibboleth-idp/metadata/fake-sp.xml" />
+                          metadataFile="/opt/shibboleth-idp/metadata/fake-sp.xml" />-->
         <!-- Example metadata provider. -->
         <!-- Reads metadata from a URL and store a backup copy on the file system. -->
         <!-- Validates the signature of the metadata and filters out all by SP entities in order to save memory -->
